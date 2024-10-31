@@ -17,11 +17,11 @@ RegisterCommand("help", function(source, args, raw)
 				Notify("Medic is arriving")
 			else
 				if EMSOnline > Config.Doctor then
-					Notify("There is too many medics online", "error")
+					Notify("EMS is Active Please call EMS", "error")
 				elseif not hasEnoughMoney then
-					Notify("Not Enough Money", "error")
+					Notify("You need $1000 for medical", "error")
 				else
-					Notify("Wait Paramadic is on its Way", "primary")
+					Notify("EMS is enroute", "primary")
 				end	
 			end
 		end)
@@ -102,7 +102,7 @@ function DoctorNPC()
 	end
 
 	TaskPlayAnim(test1, "mini@cpr@char_a@cpr_str","cpr_pumpchest",1.0, 1.0, -1, 9, 1.0, 0, 0, 0)
-	QBCore.Functions.Progressbar("revive_doc", "The doctor is giving you medical aid", Config.ReviveTime, false, false, {
+	QBCore.Functions.Progressbar("revive_doc", "Ems is rendering Aid", Config.ReviveTime, false, false, {
 		disableMovement = false,
 		disableCarMovement = false,
 		disableMouse = false,
